@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Raj Singh">
     <meta name="robots" content="noindex">
-    <meta name="og:image" content="{% static 'images/logo.png' %}">
+    <meta name="og:image" content="https://notepaper.pythonanywhere.com/static/images/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
     <link rel="stylesheet" href={% static "css/prism.css" %}>
@@ -17,7 +17,6 @@
 </head>
 
 <body>
-    <h1>{{title}}</h1>
     {%for tag in html%}{%if tag|is_img%}
     <img src="{% static  tag|media %}" >{%elif tag|is_video%} <video src="{% static  tag|media %}" autoplay muted loop width="50%">your device donot support video</video>{%else%}
     {{tag|safe}}{%endif%}{%endfor%}

@@ -8,6 +8,7 @@ class Html:
         '#### ':('<h4 id="%s">','</h4>'),
         '### ':('<h3 id="%s">','</h3>'),
         '## ':('<h2 id="%s">','</h2>'),
+        '# ':('<h1 id="%s">','</h1>'),
     }
     overlineTag=("<span class='overline'>","</span>")
     highliteTag=("<span class='heighlite'>","</span>")
@@ -36,8 +37,12 @@ class Html:
         self.end=0
     def title(self,fileobj:open,file:str):
         title=re.findall('^# (.*)',file)
-        self.Title=title[0] if title else fileobj.name.split('/')[-1][:-3]
-        print(self.Title)
+        
+        if title:
+            self.Title=title[0] 
+        else:
+            self.Title=fileobj.name.split('/')[-1][:-3]
+            self.html.append(self.headingTag["# "][0]%self.Title + self.Title + self.headingTag["# "][1])
     def isHeading(self,text:str)->bool:
         '''checks weather the sting given is an heading'''
         return True if text[0:1]=="#" else False
@@ -86,7 +91,7 @@ class Html:
     def video(self,text:str):
         return "video=%s"%text
     def head(self,text:str):
-        for marker in Html.headingTag:
+        for marker in Html.headingTag:# marker=## Heading
             if marker in text:
                 return text.replace(marker,Html.headingTag[marker][0]%text.strip(marker).replace(' ','-') )+Html.headingTag[marker][1]
     def code(self,text:str):

@@ -9,12 +9,33 @@ p,div{
 .overline{
     text-decoration: overline;
 }
-image{
-    width: 50%;
+img{
+    width: 80%;
 }
 .bold{
     font-weight: bold;
 }
 .italic{
     font-style: italic;
+}
+@media only screen and (max-width:767px) {
+    body{
+        padding: 8px;
+    }
+    img{
+        width: 100%;
+    }
+}
+video{
+    width: 80%;
+}
+
+@media(prefers-color-scheme:dark){
+    body{
+        background-color: rgba(0, 0, 0, 0.651);
+        color: azure;
+    }
+    video{
+        width: 100%;
+    }
 }
