@@ -29,11 +29,11 @@ class Html:
     def __init__(self,filename:str):
         file=open(filename)
         filer=file.read()
+        self.html=[]
         self.title(file,filer)
         file.close()
         filer=filer.split('\n')
         self.fileIter=filer.__iter__()
-        self.html=[]
         self.end=0
     def title(self,fileobj:open,file:str):
         title=re.findall('^# (.*)',file)
