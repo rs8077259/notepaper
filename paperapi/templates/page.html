@@ -18,7 +18,7 @@
 
 <body>
     {%for tag in html%}{%if tag|is_img%}
-    <img src="{% static  tag|media %}" >{%elif tag|is_video%} <video src="{% static  tag|media %}" autoplay muted loop width="50%">your device donot support video</video>{%else%}
+    <img src="{% static  tag|media %}" width="100%">{%elif tag|is_video%} <video src="{% static  tag|media %}" autoplay muted loop width="50%">your device donot support video</video>{%else%}
     {{tag|safe}}{%endif%}{%endfor%}
     <script src={% static "js/prism.js" %}></script>
 </body>
