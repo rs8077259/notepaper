@@ -164,7 +164,7 @@ class Html:
         if self.isHeading(self.text):
             self.html.append(self.head(self.text))
         elif self.isEmbeded(self.text):
-            self.text=re.findall('!\[\[(.*)\]\]',self.text)[0]
+            self.text=re.findall('!\[\[(.*)\]\]',self.text)[0].replace(' ','_')
             if self.isImg(self.text):
                 self.html.append(self.img(self.text))
             elif self.isVideo(self.text):

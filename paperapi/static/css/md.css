@@ -5,3 +5,10 @@ p,div{
 .helight{
     background-color: yellow;
 }
+
+.overline{
+    text-decoration: overline;
+}
+image{
+    width: 50%;
+}
