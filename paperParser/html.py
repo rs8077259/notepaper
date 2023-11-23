@@ -8,7 +8,6 @@ class Html:
         '#### ':('<h4 id="%s">','</h4>'),
         '### ':('<h3 id="%s">','</h3>'),
         '## ':('<h2 id="%s">','</h2>'),
-        '# ':('<h1 id="%s">','</h1>'),
     }
     overlineTag=("<span class='overline'>","</span>")
     highliteTag=("<span class='heighlite'>","</span>")
