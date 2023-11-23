@@ -2,14 +2,14 @@
 p,div{
     text-align: justify;
 }
-.heilight{
+.heighlite{
     background-color: yellow;
 }
 
 .overline{
     text-decoration: overline;
 }
-.image{
+image{
     width: 50%;
 }
 .bold{
