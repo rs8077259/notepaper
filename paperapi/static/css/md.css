@@ -2,13 +2,19 @@
 p,div{
     text-align: justify;
 }
-.helight{
+.heilight{
     background-color: yellow;
 }
 
 .overline{
     text-decoration: overline;
 }
-image{
+.image{
     width: 50%;
+}
+.bold{
+    font-weight: bold;
+}
+.italic{
+    font-style: italic;
 }
