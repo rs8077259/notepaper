@@ -1,0 +1,5 @@
+md
+media
+*.cnf
+cache
+__pycache__
