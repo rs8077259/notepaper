@@ -49,7 +49,10 @@ def checkfile(request):
         try:
             PaperModel.objects.get(filename=key)
         except:
-            responseJson['file'].append(key)
+            try:
+                MediaModel.objects.get(filename=key)
+            except:
+                responseJson['file'].append(key)
     return Response(responseJson,status=status.HTTP_200_OK)
 
     
