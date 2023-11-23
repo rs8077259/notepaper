@@ -12,7 +12,7 @@ class Html:
     }
     overlineTag=("<span class='overline'>","</span>")
     highliteTag=("<span class='heighlite'>","</span>")
-    codeTag=("<pre><code class='language-%s line-numbers'>","</code></pre>")
+    codeTag=("<pre><code class='language-%s line-numbers' data-download-link>","</code></pre>")
     aTag=("<a href='%s'>","</a>")
     olTag=("<ol><li>","</li></ol>")
     ulTag=("<ul>","</ul>")
