@@ -37,7 +37,11 @@ def recivefile(request):
                 form.save()
         else:
             #for saving media files image,video
-            hash=hashlib.file_digest(request.FILES[names],'sha256').hexdigest()
+            hash=hashlib.sha256()
+            file=request.FILES[names]
+            while(chunck:=file.read(5400)):
+                hash.update(chunck)
+            hash=hash.hexdigest()
             try:
                 filedb=MediaModel.objects.get(filename=names)
                 
