@@ -24,7 +24,6 @@ def recivefile(request):
                 hash.update(chunck)
             hash=hash.hexdigest()
 
-            print(hash)
             try:
                 filedb=PaperModel.objects.get(filename=names)
                 what = filedb.hash == hash
