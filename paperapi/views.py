@@ -18,7 +18,13 @@ def recivefile(request):
     for names in request.FILES:  # ther could be multiple file in request And request.Files return dictionary for the format {'filename':binary}
         if names[-3:]=='.md':
             #savinf markdown file
-            hash=hashlib.file_digest(request.FILES[names],'sha256').hexdigest()
+            hash=hashlib.sha256()
+            file=request.FILES[names]
+            while(chunck:=file.read(5400)):
+                hash.update(chunck)
+            hash=hash.hexdigest()
+
+            print(hash)
             try:
                 filedb=PaperModel.objects.get(filename=names)
                 what = filedb.hash == hash
@@ -61,8 +67,6 @@ def sendfile(request,pagename):
     html=Html(os.getcwd()+'/'+str(location))
     html.convertToHtml()
     context={'html':html.html,'title':html.Title}
-    for j in html.html:
-        print(j)
     return render(request,'page.html',context=context)
     
 @api_view(['POST'])
