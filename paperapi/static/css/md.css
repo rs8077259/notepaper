@@ -32,7 +32,7 @@ video{
 
 @media(prefers-color-scheme:dark){
     body{
-        background-color: rgba(0, 0, 0, 0.651);
+        background-color: rgba(0, 0, 0, 0.89);
         color: azure;
     }
     video{

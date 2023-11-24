@@ -105,6 +105,8 @@ class Html:
             if self.text=='':
                 pass
             else:
+                text=text.replace("<",'&lt')
+                text=text.replace('>','&gt')
                 self.html.append(text)
         return self.code(self.fileIter.__next__())
         
@@ -168,7 +170,7 @@ class Html:
         if self.isHeading(self.text):
             self.html.append(self.head(self.text))
         elif self.isEmbeded(self.text):
-            self.text=re.findall('!\[\[(.*)\]\]',self.text)[0].replace(' ','_')
+            self.text=re.findall('!\[\[(.*)\]\]',self.text)[0].replace(' ','_').replace('~','')
             if self.isImg(self.text):
                 self.html.append(self.img(self.text))
             elif self.isVideo(self.text):
