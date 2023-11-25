@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
     <link rel="stylesheet" href={% static "css/prism.css" %}>
-    <link rel="stylesheet" href={% static "css/prism-odark.css" %}>
+    <link rel="stylesheet" href={% static "css/prism-dark.css" %}>
     <link rel="stylesheet" href={% static "css/md.css" %}>
     <title>{{ title }}</title>
 </head>
@@ -21,6 +21,7 @@
     <img src="{% static  tag|media %}" width="100%">{%elif tag|is_video%} <video src="{% static  tag|media %}" autoplay muted loop width="50%">your device donot support video</video>{%else%}
     {{tag|safe}}{%endif%}{%endfor%}
     <script src={% static "js/prism.js" %}></script>
+    <script src={% static "js/prism-dark.js" %}></script>
 </body>
 
 </html>

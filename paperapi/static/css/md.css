@@ -22,7 +22,7 @@ img{
     body{
         padding: 8px;
     }
-    img{
+    img,video{
         width: 100%;
     }
 }
@@ -32,7 +32,7 @@ video{
 
 @media(prefers-color-scheme:dark){
     body{
-        background-color: rgba(0, 0, 0, 0.89);
+        background-color: rgb(3, 2, 2);
         color: azure;
     }
     video{
