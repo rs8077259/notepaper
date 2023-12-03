@@ -112,22 +112,22 @@ class Html:
         
 
     def bold(self,text:str):
-        mdtag=re.findall('\*\*[^\s].*\*\*',text)
-        word=re.findall('\*\*([^\s].*)\*\*',text)
+        mdtag=re.findall('\*\*[^\s].*?\*\*',text)
+        word=re.findall('\*\*([^\s].*?)\*\*',text)
         for tag,wor in zip(mdtag,word):
             word=word=Html.boldTag[0]+wor+Html.boldTag[1]
             text=text.replace(tag,word)
         return text
     def highlite(self,text:str):
-        mdtag=re.findall('==[^\s].*==',text)#findig whole tag
-        word=re.findall('==([^\s].*)==',text)#extracting words without tags
+        mdtag=re.findall('==[^\s].*?==',text)#findig whole tag
+        word=re.findall('==([^\s].*?)==',text)#extracting words without tags
         for tag,wor in zip(mdtag,word):
             word=word=Html.highliteTag[0]+wor+Html.highliteTag[1]
             text=text.replace(tag,word)
         return text
     def overline(self,text:str):
-        mdtag=re.findall('~~[^\s].*~~',text)
-        word=re.findall('~~([^\s].*)~~',text)
+        mdtag=re.findall('~~[^\s].*?~~',text)
+        word=re.findall('~~([^\s].*?)~~',text)
         for tag,wor in zip(mdtag,word):
             word=word=Html.overlineTag[0]+wor+Html.overlineTag[1]
             text=text.replace(tag,word)
@@ -144,8 +144,8 @@ class Html:
     def horiRule(self,text:str):
         return '<hr>'
     def italic(self,text:str):
-        mdtag=re.findall('\*[^\s].*\*',text)
-        word=re.findall('\*([^\s].*)\*',text)
+        mdtag=re.findall('\*[^\s].*?\*',text)
+        word=re.findall('\*([^\s].*?)\*',text)
         for tag,wor in zip(mdtag,word):
             word=Html.italicTag[0]+wor+Html.italicTag[1]
             text=text.replace(tag,word)

@@ -25,9 +25,11 @@ def recivefile(request):
             hash=hash.hexdigest()
 
             try:
+                # checkin file of same name exists 
                 filedb=PaperModel.objects.get(filename=names)
-                what = filedb.hash == hash
+                what = filedb.hash == hash # checking sha hash of file to determine wether file is modified
                 if what==False:
+                    filedb.file.delete()# deleting previous file
                     filedb.file=request.FILES[names]
                     filedb.hash=hash
                     filedb.save()
@@ -43,10 +45,12 @@ def recivefile(request):
                 hash.update(chunck)
             hash=hash.hexdigest()
             try:
+                # checkin file of same name exists 
                 filedb=MediaModel.objects.get(filename=names)
                 
                 what = filedb.hash == hash
                 if what==False:
+                    filedb.file.delete()# deleting previous file
                     filedb.file=request.FILES[names]
                     filedb.hash=hash
                     filedb.save()
