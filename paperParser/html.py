@@ -153,10 +153,9 @@ class Html:
     def linkPaper(self,text:str):
         mdtag=re.findall('\[\[[^\s].*\]\]',text)
         word=re.findall('\[\[(.*)\]\]',text)
-        
         for tag,wor in zip(mdtag,word):
-            link=reverse('paperapi:sendfile',args=['o'])[:-1]+wor.strip()#concatinate page url with pagename 
-            atag=(Html.pageLinkTag[0]%link)+wor+Html.pageLinkTag[0]
+            link=reverse('paperapi:sendfile',args=['o'])[:-1]+wor.strip()#concatinate page url(getting from reverse function) with pagename 
+            atag=(Html.pageLinkTag[0]%link)+wor+Html.pageLinkTag[1]
             text=text.replace(tag,atag)
         return text
 
