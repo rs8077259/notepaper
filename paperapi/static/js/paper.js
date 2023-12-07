@@ -18,7 +18,7 @@ function handleTouchEnd(event){
     console.log(startX);
     let move=event.changedTouches[0].clientX-startX
     console.log(move)
-    if(startX>=viewportWidth-80 || startX<=0+80)
+    if(startX>=viewportWidth-50 || startX<=0+50)
     if ((move>=-10&&move!=0) && chapterListOpen==false){
         chapterlist.style.left = '0px';
         chapterListOpen=true
