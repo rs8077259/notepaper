@@ -18,6 +18,56 @@ img{
 .italic{
     font-style: italic;
 }
+/*styling for chapterlists*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: rows;
+    min-height: 100vh;
+}
+.chapter-list{
+    background-color: rgb(161, 158, 158);
+    transition: all .3s ease-in-out;
+    flex: 1 .5 200px;
+}
+.content-area{
+    flex: 1 0 60%;
+    padding: 8px;
+}
+.heading-list{
+    background-color: rgb(161, 158, 158);
+    flex: 1 .5 200px;
+    transition: right .3s ease-in-out;
+}
+@media (max-width:600px){
+    .chapter-list{
+        width: 160px;
+    }
+    .heading-list{
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        bottom: 0px;
+        right: -100%;
+    }
+}
+@media (max-width:500px){
+	.chapter-list{
+        position: fixed;
+        width: 100%;
+        left: -100%;
+        top: 0px;
+        bottom: 0px;
+    }
+    body{
+        display: block;
+    }
+}
 @media only screen and (max-width:767px) {
     body{
         padding: 8px;

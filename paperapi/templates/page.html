@@ -14,12 +14,18 @@
     <link rel="stylesheet" href={% static "css/md.css" %}>
     <title>{{ title }}</title>
 </head>
-
 <body>
-    {%for tag in html%}{%if tag|is_img%}
-    <img src="{% static  tag|media %}" width="100%">{%elif tag|is_video%} <video src="{% static  tag|media %}" autoplay muted loop width="50%">your device donot support video</video>{%else%}
-    {{tag|safe}}{%endif%}{%endfor%}
+    
+    <main class="content-area">
+        {%for tag in html%}{%if tag|is_img%}
+        <img src="{% static  tag|media %}" width="100%">{%elif tag|is_video%} <video src="{% static  tag|media %}" autoplay muted loop width="50%">your device donot support video</video>{%else%}
+        {{tag|safe}}{%endif%}{%endfor%}
+    </main>
+    <aside class="chapter-list">
+        hello
+    </aside>
+    <aside class="heading-list"></aside>
+    <script src="{% static "js/paper.js" %}"></script>
     <script src={% static "js/prism.js" %}></script>
 </body>
-
 </html>
