@@ -18,12 +18,13 @@ function handleTouchEnd(event){
     console.log(startX);
     let move=event.changedTouches[0].clientX-startX
     console.log(move)
-    if(startX>=viewportWidth-50 || startX<=0+50)
-    if ((move>=-10&&move!=0) && chapterListOpen==false){
-        chapterlist.style.left = '0px';
-        chapterListOpen=true
-    }
-    else if((move<=10&&move!=0) && headingListOpen==false){
+    if(startX<=0+50)
+        if ((move>=-10&&move!=0) && chapterListOpen==false){
+            chapterlist.style.left = '0px';
+            chapterListOpen=true
+        }
+    if(startX>=viewportWidth-50)
+        if((move<=10&&move!=0) && headingListOpen==false){
         console.log(headingList)
         headingList.style.right = '0px';
         headingListOpen=true;
