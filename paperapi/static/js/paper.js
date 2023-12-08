@@ -20,7 +20,6 @@ function handleTouchEnd(event){
     if(event.timeStamp-startXTimestamp>210)
         return
     let move=event.changedTouches[0].clientX-startX
-    console.log(move)
     if(startX<=0+50)
         if ((move>=-10&&move!=0) && chapterListOpen==false){
             chapterlist.style.left = '0px';
@@ -28,7 +27,6 @@ function handleTouchEnd(event){
         }
     if(startX>=viewportWidth-50)
         if((move<=10&&move!=0) && headingListOpen==false){
-        console.log(headingList)
         headingList.style.right = '0px';
         headingListOpen=true;
     }
