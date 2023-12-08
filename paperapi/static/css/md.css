@@ -58,8 +58,7 @@ body{
     .heading-list{
         position: fixed;
         width: 100%;
-        top: 0px;
-        bottom: 0px;
+        height: 100vh;
         right: -100%;
         z-index: 9999999;
     }
@@ -69,8 +68,7 @@ body{
         position: fixed;
         width: 100%;
         left: -100%;
-        top: 0px;
-        bottom: 0px;
+        height: 100vh;
         z-index: 99999999;
     }
     .content-area{
