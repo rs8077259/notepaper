@@ -38,7 +38,6 @@ body{
 }
 .content-area{
     order: 2;
-    background-color: whitesmoke;
     flex: 1 0 60%;
     padding: 8px;
 }
@@ -58,6 +57,7 @@ body{
         top: 0px;
         bottom: 0px;
         right: -100%;
+        z-index: 9999999;
     }
 }
 @media (max-width:500px){
@@ -67,6 +67,7 @@ body{
         left: -100%;
         top: 0px;
         bottom: 0px;
+        z-index: 99999999;
     }
     .content-area{
         width: 100%;

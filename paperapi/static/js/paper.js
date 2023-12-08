@@ -17,16 +17,18 @@ function handleTouchStart(event) {
 }
 function handleTouchEnd(event){
     console.log(event.timeStamp-startXTimestamp);
-    if(event.timeStamp-startXTimestamp>210)
+    if(event.timeStamp-startXTimestamp>230)
         return
     let move=event.changedTouches[0].clientX-startX
+    console.log(move)
     if(startX<=0+50)
-        if ((move>=-10&&move!=0) && chapterListOpen==false){
+        if ((move>=-50&&move!=0) && chapterListOpen==false){
             chapterlist.style.left = '0px';
             chapterListOpen=true
         }
     if(startX>=viewportWidth-50)
-        if((move<=10&&move!=0) && headingListOpen==false){
+        if((move<=50&&move!=0) && headingListOpen==false){
+
         headingList.style.right = '0px';
         headingListOpen=true;
     }
