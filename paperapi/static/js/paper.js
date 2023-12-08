@@ -1,4 +1,5 @@
 var startX=0
+var startXTimestamp=0
 var chapterListOpen=false
 var headingListOpen=false;
 let viewportWidth=window.innerWidth
@@ -12,10 +13,12 @@ container.addEventListener('touchend', handleTouchEnd);
 function handleTouchStart(event) {
     startX = event.touches[0].clientX;
     currentX = startX;
+    startXTimestamp=event.timeStamp;
 }
 function handleTouchEnd(event){
-    console.log(viewportWidth)
-    console.log(startX);
+    console.log(event.timeStamp-startXTimestamp);
+    if(event.timeStamp-startXTimestamp>210)
+        return
     let move=event.changedTouches[0].clientX-startX
     console.log(move)
     if(startX<=0+50)

@@ -31,15 +31,19 @@ body{
     min-height: 100vh;
 }
 .chapter-list{
+    order: 1;
     background-color: rgb(161, 158, 158);
     transition: all .3s ease-in-out;
     flex: 1 .5 200px;
 }
 .content-area{
+    order: 2;
+    background-color: whitesmoke;
     flex: 1 0 60%;
     padding: 8px;
 }
 .heading-list{
+    order: 3;
     background-color: rgb(161, 158, 158);
     flex: 1 .5 200px;
     transition: right .3s ease-in-out;
@@ -64,8 +68,10 @@ body{
         top: 0px;
         bottom: 0px;
     }
-    body{
-        display: block;
+    .content-area{
+        width: 100%;
+        min-height: 100vh;
+        height: 100vh;
     }
 }
 @media only screen and (max-width:767px) {
