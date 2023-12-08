@@ -35,6 +35,7 @@ class Html:
         filer=filer.split('\n')
         self.fileIter=filer.__iter__()
         self.end=0
+        self.lstype=False
     def title(self,fileobj:open,file:str):
         title=re.findall('^# (.*)',file)
         
@@ -62,6 +63,12 @@ class Html:
         return True if '---' == text[0:3] else False
     def isCheckBox(self,text:str):
         return True if '- [ ] ' in text or '- [x] ' in text else False
+    def isList(self,text:str)->"type_of_list":
+        if re.search('^[0-9]*\.\s',text):
+            return 'ol'
+        elif re.search('^[-]\s',text):
+            return 'ul'
+        return False
     def hasInLine(self,text:str)->bool:
         if re.search('\*\*([^\s]+)',text):
             return True
@@ -164,8 +171,37 @@ class Html:
             return text.replace('- [ ] ','<input type="checkbox" >')
         elif '- [x] ' in Html.to_html.text:
             return text.replace('- [x] ','<input type="checkbox" checked>')
+    def List(self,text:str):
+        return '<li>'+(' '.join(text.split(' ')[1:])+'</li>')
+    def olList(self,text:str):
+        print(text)
+        if self.end and (not self.isList(text)):
+            self.html.append('</ol>')
+            self.end=0
+            return text
+        if self.end==0:
+            self.end=1
+            self.html.append('<ol>')
+        li='<li>'+(' '.join(text.split(' ')[1:])+'</li>')
+        self.html.append(li)
+        print(self.html)
+        self.olList(self.fileIter.__next__())
+
     def convertToHtml(self):
         self.text=self.fileIter.__next__()
+        if lstype:=self.isList(self.text):
+            if self.html[-1]=='<br>':
+                self.html.pop(-1)
+            if self.lstype:
+                self.text=self.List(self.text)
+            else:
+                self.lstype=lstype
+                self.html.append(f'<{lstype}>')
+                self.text=self.List(self.text)
+        elif self.lstype:
+            self.html.append(f'</{self.lstype}')
+            self.lstype=False
+
         if self.isHeading(self.text):
             self.html.append(self.head(self.text))
         elif self.isEmbeded(self.text):

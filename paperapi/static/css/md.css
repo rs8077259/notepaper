@@ -18,6 +18,9 @@ img{
 .italic{
     font-style: italic;
 }
+ol{
+    list-style-position: inside;
+}
 /*styling for chapterlists*/
 *{
     margin: 0;
@@ -42,6 +45,7 @@ body{
     padding: 8px;
 }
 .heading-list{
+    padding: 23px;
     order: 3;
     background-color: rgb(161, 158, 158);
     flex: 1 .5 200px;
