@@ -1,0 +1,13 @@
+{
+    "name":"sample",
+    "short_name":"Sort",
+    "icons":[{
+        "src":"logo.png",
+        "sizes":"800x800",
+        "type":"image/png"
+    }],
+    "start_url":"/first.html",
+    "display":"standalone",
+    "orientation":"portrait",
+    "background_color":"white"
+}

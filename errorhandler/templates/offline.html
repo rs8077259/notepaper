@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline</title>
+    <link rel="stylesheet" href="{% static "css/offline.css" %}">
+</head>
+<body>
+    
+    <img class="image" src="{% static "images/offline.svg" %}" alt="dof holding switch in mouth" width="80%" height="">
+    <h1>You are currentely offline</h1>
+    <p>we couldn't load the page on this connection.please try again</p>
+    <a class="reload-button" href="javascript:void(0);" onclick="location.reload()">Retry Connection</a>
+</body>
+</html>

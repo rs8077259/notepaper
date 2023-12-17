@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/home.css' %}">
+    <link rel="stylesheet" href="{% static '/css/poster.css' %}">
+    <link rel="manifest" href="{% static '/json/manifest.json'%}">
+    <title>NotePaper</title>
+</head>
+<body>
+    <header>
+        <!--contains 2 tags-->
+        <section class="header-logo-container logo-container">
+            <img src="{% static '/images/logo.png' %}" alt="logo of organisation" class="header-logo">
+        </section>
+        <section class="nav-section">
+            <nav>
+                <ul>
+                    <a href=""><li>HOME</li></a>
+                    <a href=""><li>API DOCS</li></a>
+                    <a href=""><li>NOTES</li></a>
+                    <a href=""><li>CONTRIBUTE</li></a>
+                </ul>
+            </nav>
+        </section>
+        <section class="only-mobile"></section>
+    </header>
+    <main class="main">
+        <section class="note-section">
+            <h2>Note</h2>
+            <div class="note-list">
+                <span class="poster">
+                    <a href="">
+                    <img class="poster-image" src="{% static '/images/logo.jpg' %}" alt="profile">
+                    <div class="tag-con">
+                        <span class="tag">#raj-singh</span>
+                        <span class="tag">#student</span>
+                    </div >
+                    <h2>Lorem ipsum</h2>
+                    <p class="poster-p">
+                        Lorem ipsum dolore. Placeat, quia exercitationem?
+                    </p>
+                    <div class="button-con"><span class="button">lorem</span></div>
+                    </a>
+                </span>
+                <span class="poster">
+                    <a href="">
+                    <img class="poster-image" src="{% static '/images/logo.jpg' %}" alt="profile">
+                    <div class="tag-con">
+                        <span class="tag">#raj-singh</span>
+                        <span class="tag">#student</span>
+                    </div >
+                    <h2>Lorem ipsum</h2>
+                    <p class="poster-p">
+                        Lorem ipsum dolore. Placeat, quia exercitationem?
+                    </p>
+                    <div class="button-con"><span class="button">lorem</span></div>
+                    </a>
+                </span>
+                <span class="poster">
+                    <a href="">
+                    <img class="poster-image" src="{% static '/images/logo.jpg' %}" alt="profile">
+                    <div class="tag-con">
+                        <span class="tag">#raj-singh</span>
+                        <span class="tag">#student</span>
+                    </div >
+                    <h2>Lorem ipsum</h2>
+                    <p class="poster-p">
+                        Lorem ipsum dolore. Placeat, quia exercitationem?
+                    </p>
+                    <div class="button-con"><span class="button">lorem</span></div>
+                    </a>
+                </span>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <section class="feedback-input-container">
+            <form action="">
+                <textarea name="feedback" class="feedback-input-box" id="" cols="30" rows="10" placeholder="please write Your feedback here..."></textarea>
+                <button class="send-button">Submit Feedback</button>
+            </form>
+        </section>
+        <section class="footer-nav-copyright">
+            <ul>
+                <a href=""><li>contact us</li></a>
+                <a href=""><li>contact us</li></a>
+                <a href=""><li>contact us</li></a>
+                <a href=""><li>contact us</li></a>
+            </ul>
+            <div>
+                &copy;copyright2023-2025
+            </div>
+        </section>
+    </footer>
+    <script src="{% static '/js/main.js' %}"></script>
+</body>
