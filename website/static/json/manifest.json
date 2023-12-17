@@ -1,6 +1,6 @@
 {
-    "name":"sample",
-    "short_name":"Sort",
+    "name":"notepaper.pythonanywhere.com",
+    "short_name":"notepaper",
     "icons":[{
         "src":"/static/images/logo.png",
         "sizes":"800x800",
