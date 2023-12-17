@@ -31,19 +31,15 @@ self.addEventListener('install',function(event){
         })
     )
 })
-self.addEventListener('fetch',event=>{
+
+self.addEventListener('fetch',
+event=>{
+    console.log("here i am ");
     event.respondWith(caches.match(event.request)
     .then(cachedResponse=>{
         if (cachedResponse){
             console.log("here")
-            return cachedResponse
-            console.log(event.request)
-        }
-        else
-        {
-            console.log("else part")
-            return fetch(event.request);
-        }
-    })
-    )
+            return cachedResponse||fetch(event.request);
+        }}
+    ))
 })

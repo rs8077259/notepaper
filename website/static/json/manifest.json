@@ -2,12 +2,13 @@
     "name":"sample",
     "short_name":"Sort",
     "icons":[{
-        "src":"logo.png",
+        "src":"/static/images/logo.png",
         "sizes":"800x800",
         "type":"image/png"
     }],
-    "start_url":"/first.html",
+    "start_url":"/",
     "display":"standalone",
     "orientation":"portrait",
-    "background_color":"white"
+    "background_color":"white",
+    "theme_color":"white"
 }
