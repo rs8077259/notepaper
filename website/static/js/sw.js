@@ -15,6 +15,8 @@ let resourcesToPreCache=[
     '/static/css/poster.css',
     '/static/images/logo.jpg',
     '/static/images/logo.png',
+    '/static/js/sw.js',
+    '/static/js/main.js',
     '/error/offline/',
     '/static/css/offline.css',
     '/static/images/offline.svg',
