@@ -1,13 +1,3 @@
-
-
-
-self.addEventListener('activate',function(event){
-    console.log("active event");
-})
-self.addEventListener('fetch',function(event) {
-    console.log(Fetch);    
-})
-
 let cacheName= 'cache-v2';
 let resourcesToPreCache=[
     '/',
@@ -15,14 +5,14 @@ let resourcesToPreCache=[
     '/static/css/poster.css',
     '/static/images/logo.jpg',
     '/static/images/logo.png',
-    '/static/js/sw.js',
+    '/sw.js',
     '/static/js/main.js',
     '/error/offline/',
     '/static/css/offline.css',
     '/static/images/offline.svg',
 ];
 self.addEventListener('install',function(event){
-    console.log("install event");
+    self.skipWaiting();
     event.waitUntil(
         caches.open(cacheName)
         .then(cache=>{
@@ -32,6 +22,9 @@ self.addEventListener('install',function(event){
             console.log(err);
         })
     )
+})
+self.addEventListener('activate',event=>{
+    console.log("updated service worker is now activated");
 })
 
 self.addEventListener('fetch',
@@ -44,4 +37,4 @@ event=>{
             return cachedResponse||fetch(event.request);
         }}
     ))
-})
+})//rj
