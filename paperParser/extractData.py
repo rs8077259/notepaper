@@ -72,6 +72,8 @@ class MD:
                 if self.isImg(text):
                     self.Poster=poster[0].replace(' ','_').replace('~','')
                     break
+                else:
+                    self.Poster=''
         else:
             self.Poster=''
 
