@@ -11,91 +11,112 @@
     <link rel="shortcut icon" href="{% static '/images/logo.png' %}" type="image/x-icon">
     <title>NotePaper</title>
 </head>
+
 <body>
+
     <header>
-        <!--contains 2 tags-->
-        <section class="header-logo-container logo-container">
-            <img src="{% static '/images/logo.png' %}" alt="logo of organisation" class="header-logo">
+        <section class="logo-section">
+            <img src="{% static '/images/logo.png' %}" alt="logo" class="logo">
+            <span class="org-name">NotePaper</span>
         </section>
-        <section class="nav-section">
-            <nav>
-                <ul>
-                    <a href=""><li>HOME</li></a>
-                    <a href=""><li>API DOCS</li></a>
-                    <a href=""><li>NOTES</li></a>
-                    <a href=""><li>CONTRIBUTE</li></a>
-                </ul>
-            </nav>
-        </section>
-        <section class="only-mobile"></section>
-    </header>
-    <main class="main">
-        <section class="note-section">
-            <h2>Note</h2>
-            <div class="note-list">
-                <span class="poster">
-                    <a href="">
-                    <img class="poster-image" src="{% static '/images/logo.jpg' %}" alt="profile">
-                    <div class="tag-con">
-                        <span class="tag">#raj-singh</span>
-                        <span class="tag">#student</span>
-                    </div >
-                    <h2>Lorem ipsum</h2>
-                    <p class="poster-p">
-                        Lorem ipsum dolore. Placeat, quia exercitationem?
-                    </p>
-                    <div class="button-con"><span class="button">lorem</span></div>
-                    </a>
-                </span>
-                <span class="poster">
-                    <a href="">
-                    <img class="poster-image" src="{% static '/images/logo.jpg' %}" alt="profile">
-                    <div class="tag-con">
-                        <span class="tag">#raj-singh</span>
-                        <span class="tag">#student</span>
-                    </div >
-                    <h2>Lorem ipsum</h2>
-                    <p class="poster-p">
-                        Lorem ipsum dolore. Placeat, quia exercitationem?
-                    </p>
-                    <div class="button-con"><span class="button">lorem</span></div>
-                    </a>
-                </span>
-                <span class="poster">
-                    <a href="">
-                    <img class="poster-image" src="{% static '/images/logo.jpg' %}" alt="profile">
-                    <div class="tag-con">
-                        <span class="tag">#raj-singh</span>
-                        <span class="tag">#student</span>
-                    </div >
-                    <h2>Lorem ipsum</h2>
-                    <p class="poster-p">
-                        Lorem ipsum dolore. Placeat, quia exercitationem?
-                    </p>
-                    <div class="button-con"><span class="button">lorem</span></div>
-                    </a>
-                </span>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <section class="feedback-input-container">
-            <form action="">
-                <textarea name="feedback" class="feedback-input-box" id="" cols="30" rows="10" placeholder="please write Your feedback here..."></textarea>
-                <button class="send-button">Submit Feedback</button>
+        <section class="search-section">
+            <form action="" method="get">
+                <div class="search-box">
+                    <input type="text" name="search" id="search-input" class="search-input">
+                    <button type="submit" class="search-button">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
+                            width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2ZM3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
             </form>
         </section>
-        <section class="footer-nav-copyright">
-            <ul>
-                <a href=""><li>contact us</li></a>
-                <a href=""><li>contact us</li></a>
-                <a href=""><li>contact us</li></a>
-                <a href=""><li>contact us</li></a>
-            </ul>
-            <div>
-                &copy;copyright2023-2025
-            </div>
+    </header>
+    <main class="main-section">
+        <section>
+            <h2 class="content-heading">
+                Notes
+            </h2>
         </section>
+        <section class="main-content" id="main-content">
+        </section>
+        <section class="buffer-animation-container" id="buffer-animation-container">
+        </section>
+
+    </main>
+    <footer>
+        <nav>
+            <ul class="menu">
+                <button id="home-button" class="menu-button">
+                    <li>
+                        <svg class="menu-icon" stroke="currentColor" fill="currentColor" stroke-width="0"
+                            viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Home">
+                                <path
+                                    d="M19.37,10.22l-6.2-7.6a1.5,1.5,0,0,0-2.33-.01L4.63,10.22a2.5,2.5,0,0,0-.57,1.59v7.63a2.507,2.507,0,0,0,2.5,2.5H17.44a2.507,2.507,0,0,0,2.5-2.5V11.81A2.5,2.5,0,0,0,19.37,10.22ZM10,20.94v-5.5a1.5,1.5,0,0,1,1.5-1.5h1a1.5,1.5,0,0,1,1.5,1.5v5.5Zm8.94-1.5a1.511,1.511,0,0,1-1.5,1.5H15v-5.5a2.5,2.5,0,0,0-2.5-2.5h-1A2.5,2.5,0,0,0,9,15.44v5.5H6.56a1.511,1.511,0,0,1-1.5-1.5V11.81a1.474,1.474,0,0,1,.34-.95l6.22-7.61A.474.474,0,0,1,12,3.06a.479.479,0,0,1,.39.19l6.21,7.61a1.474,1.474,0,0,1,.34.95Z">
+                                </path>
+                            </g>
+                        </svg>
+                        </svg>
+                    </li>
+                    <span class="icon-button-text">
+                        Home
+                    </span>
+                </button>
+                <button id="downloads-button" class="menu-button">
+                    <li><svg class="menu-icon" stroke="currentColor" fill="currentColor" stroke-width="0"
+                            viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z">
+                            </path>
+                        </svg>
+                    </li>
+                    <span class="icon-button-text">
+                        Downloads
+                    </span>
+                </button>
+                <button id="write-button" class="menu-button">
+                    <li>
+                        <svg class="menu-icon" stroke="currentColor" fill="currentColor" stroke-width="0"
+                            viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M373.5 27.1C388.5 9.9 410.2 0 433 0c43.6 0 79 35.4 79 79c0 22.8-9.9 44.6-27.1 59.6L277.7 319l-10.3-10.3-64-64L193 234.3 373.5 27.1zM170.3 256.9l10.4 10.4 64 64 10.4 10.4-19.2 83.4c-3.9 17.1-16.9 30.7-33.8 35.4L24.4 510.3l95.4-95.4c2.6 .7 5.4 1.1 8.3 1.1c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32c0 2.9 .4 5.6 1.1 8.3L1.7 487.6 51.5 310c4.7-16.9 18.3-29.9 35.4-33.8l83.4-19.2z">
+                            </path>
+                        </svg>
+                    </li>
+                    <span class="icon-button-text">
+                        Write
+                    </span>
+                </button>
+                <button id="menu-button" class="menu-button">
+                    <li>
+                        <svg class="menu-icon" stroke="currentColor" fill="currentColor" stroke-width="0"
+                            viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Menu_Fries">
+                                <path
+                                    d="M20.437,19.937c0.276,0 0.5,0.224 0.5,0.5c0,0.276 -0.224,0.5 -0.5,0.5l-16.874,0.002c-0.276,-0 -0.5,-0.224 -0.5,-0.5c-0,-0.276 0.224,-0.5 0.5,-0.5l16.874,-0.002Z">
+                                </path>
+                                <path
+                                    d="M20.437,11.5c0.276,-0 0.5,0.224 0.5,0.5c0,0.276 -0.224,0.5 -0.5,0.5l-10,0.001c-0.276,-0 -0.5,-0.224 -0.5,-0.5c-0,-0.276 0.224,-0.5 0.5,-0.5l10,-0.001Z">
+                                </path>
+                                <path
+                                    d="M20.437,3.062c0.276,-0 0.5,0.224 0.5,0.5c0,0.276 -0.224,0.5 -0.5,0.5l-16.874,0.001c-0.276,-0 -0.5,-0.224 -0.5,-0.5c-0,-0.276 0.224,-0.5 0.5,-0.5l16.874,-0.001Z">
+                                </path>
+                            </g>
+                        </svg>
+                    </li>
+                    <span class="icon-button-text">
+                        Menu
+                    </span>
+                </button>
+
+
+            </ul>
+        </nav>
     </footer>
+    <script src="{% static '/js/webapp.js'%}"></script>
     <script src="{% static '/js/main.js' %}"></script>
 </body>

@@ -174,7 +174,6 @@ class Html:
     def List(self,text:str):
         return '<li>'+(' '.join(text.split(' ')[1:])+'</li>')
     def olList(self,text:str):
-        print(text)
         if self.end and (not self.isList(text)):
             self.html.append('</ol>')
             self.end=0
@@ -184,7 +183,6 @@ class Html:
             self.html.append('<ol>')
         li='<li>'+(' '.join(text.split(' ')[1:])+'</li>')
         self.html.append(li)
-        print(self.html)
         self.olList(self.fileIter.__next__())
 
     def convertToHtml(self):

@@ -23,6 +23,7 @@ self.addEventListener('install',function(event){
         })
     )
 })
+/*
 self.addEventListener('activate',event=>{
     console.log("updated service worker is now activated");
 })
@@ -37,4 +38,4 @@ event=>{
             return cachedResponse||fetch(event.request);
         }}
     ))
-})//rj
+})//rj*/

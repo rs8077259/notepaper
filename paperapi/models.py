@@ -19,3 +19,10 @@ class MediaModel(models.Model):
     def __str__(self) -> str:
         return self.filename
     
+class NoteData(models.Model):
+    class Meta:
+        db_table="NoteData"
+    filename=models.CharField(max_length=255,primary_key=True)
+    title=models.CharField(max_length=100,null=False)
+    pageImage=models.CharField(max_length=200,null=True)
+    tags=models.CharField(max_length=70,null=True)

@@ -3,7 +3,7 @@
     "short_name":"notepaper",
     "icons":[{
         "src":"/static/images/logo.png",
-        "sizes":"500x500",
+        "sizes":"960x960",
         "type":"image/png"
     }],
     "start_url":"/",
