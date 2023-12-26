@@ -72,7 +72,7 @@ requestAsset(document.getElementById("home-button"));
 
 let element=document.querySelector('html')
 document.addEventListener('scroll',event=>{
-    if(element.scrollTop==((element.scrollHeight -element.clientHeight))){
+    if(element.scrollTop-500==((element.scrollHeight -element.clientHeight)-500)){
     page++;
     requestAsset(currentMenu);
     }
