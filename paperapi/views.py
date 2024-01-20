@@ -11,7 +11,7 @@ import json
 import hashlib
 from django.urls import reverse
 import os
-from dependencies import *
+from .dependencies import *
 @api_view(['POST'])
 def recivefile(request):
     '''this function receive file uploaded from client side
