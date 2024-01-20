@@ -11,6 +11,7 @@ import json
 import hashlib
 from django.urls import reverse
 import os
+from dependencies import *
 @api_view(['POST'])
 def recivefile(request):
     '''this function receive file uploaded from client side
@@ -19,24 +20,16 @@ def recivefile(request):
         
     it first casculate SHA256 checksum of file sent used to distinguish when file is modified and then save SHA and file '''
     for names in request.FILES:  # ther could be multiple file in request And request.Files return dictionary for the format {'filename':binary}
-        if names[-3:]=='.md':
+        if isMarkDownFile(names):
             #savinf markdown file
-            
-            hash=hashlib.sha256()#calculating SHA checksum of transfered file 
-            file=request.FILES[names]
-            while(chunck:=file.read(5400)):
-                hash.update(chunck)
-            hash=hash.hexdigest()
+            hash=fileSha26Hash(request.FILES[names]) #calculatin hash to know if file is different
 
             try:
                 # checkin file of same name exists 
                 filedb=PaperModel.objects.get(filename=names)
-                what = filedb.hash == hash # checking sha hash of file to determine wether file is modified
-                if what==False:
-                    filedb.file.delete(save=False)# deleting previous file
-                    filedb.file=request.FILES[names]
-                    filedb.hash=hash
-                    filedb.save()
+                fileAllReadyExist = filedb.hash == hash # checking sha hash of file to determine wether file is modified
+                if fileAllReadyExist == False:
+                    replaceMarkdownFile(filedb,request.FILES[names],hash) # replace file
                 
             except:
                 form=PaperModel(names,request.FILES[names],hash)
@@ -46,21 +39,14 @@ def recivefile(request):
             NoteData(obj.fileName,obj.Title,obj.Poster).save()
         else:
             #for saving media files image,video
-            hash=hashlib.sha256()
-            file=request.FILES[names]
-            while(chunck:=file.read(5400)):
-                hash.update(chunck)
-            hash=hash.hexdigest()
+
+            hash=hash.hexdigest(request.FILES[names])
             try:
-                # checkin file of same name exists 
-                filedb=MediaModel.objects.get(filename=names)
                 
-                what = filedb.hash == hash
-                if what==False:
-                    filedb.file.delete(save=False)# deleting previous file
-                    filedb.file=request.FILES[names]
-                    filedb.hash=hash
-                    filedb.save()
+                filedb=MediaModel.objects.get(filename=names)# checkin file of same name exists 
+                fileAllReadyExist = filedb.hash == hash
+                if fileAllReadyExist==False:
+                    replaceMediaFile(filedb,request.FILES[names],hash) # replace file
                 
             except:
                 form=MediaModel(names,request.FILES[names],hash)
