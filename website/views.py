@@ -4,3 +4,6 @@ from django.views import View
 
 def HomePage(request):
     return render(request,'home.html')
+
+def whiteBoard(request):
+    return render(request,"board.html")
