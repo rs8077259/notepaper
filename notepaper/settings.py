@@ -128,3 +128,5 @@ REST_FRAMEWORK={
         'rest_framework.renderers.JSONRenderer',
     ]
 }
+
+DATA_UPLOAD_MAX_NUMBER_FILES=500

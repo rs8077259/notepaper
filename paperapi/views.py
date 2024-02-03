@@ -40,7 +40,7 @@ def recivefile(request):
         else:
             #for saving media files image,video
 
-            hash=hash.hexdigest(request.FILES[names])
+            hash=fileSha26Hash(request.FILES[names])
             try:
                 
                 filedb=MediaModel.objects.get(filename=names)# checkin file of same name exists 
