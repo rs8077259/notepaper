@@ -9,7 +9,9 @@ class NoteDataSerializers(serializers.Serializer):
     url=serializers.SerializerMethodField(method_name='makeUrl')
     imgUrl=serializers.SerializerMethodField(method_name='imageUrl')
     def makeUrl(self,obj):
-        return reverse('paperapi:sendfile',args=[obj.filename])
+        if obj.filename:
+            return reverse('paperapi:sendfile',args=[obj.filename])
+
     def imageUrl(self,obj):
         if obj.pageImage:
             return static('media/'+obj.pageImage)
