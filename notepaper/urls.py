@@ -5,5 +5,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/",include("paperapi.urls")),
     path("error/",include("errorhandler.urls")),
-    path('api/',include('webapi.urls'))
+    path('api/',include('webapi.urls')),
+    path('api/',include('UserAPI.urls'))
 ]
